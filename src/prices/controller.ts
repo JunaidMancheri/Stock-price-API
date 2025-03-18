@@ -27,5 +27,5 @@ export async function getClosingPrice(req: Request, res: Response) {
     }
 
     const closingPrice = await PricesRepo.getClosingPrice(symbolUpperCase, date);
-    res.json({ symbol, closingPrice });
+    res.json({ symbol, closingPrice, date});
 }
