@@ -6,10 +6,10 @@ const prices = data as Prices;
 
 
 export class PricesJsonRepo implements PricesRepository {
-    getSymbol(symbol: string): SymbolData | null {
+    async getSymbol(symbol: string): Promise<SymbolData | null> {
         return prices[symbol]
     }
-    getClosingPrice(symbol: string, date: string): string | null {
-        return prices[symbol][date];
+    async getClosingPrice(symbol: string, date: string): Promise<string | null> {
+        return prices[symbol]?.[date];
     }
 }
