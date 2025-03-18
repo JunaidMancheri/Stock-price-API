@@ -28,3 +28,5 @@ app.listen(Config.port, (err) => {
     if (err) console.log(err);
     else console.log('Server running on port ' + Config.port);
 })
+
+export default app;
