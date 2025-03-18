@@ -10,8 +10,12 @@ export async function getClosingPrice(req: Request, res: Response) {
     if (!symbol) throw new BadRequest('query "symbol" is required');
     if (!date) throw new BadRequest('query "date" is required');
 
-    if (typeof symbol !== 'string') throw new BadRequest('query "symbol" must be a string');
-    if (typeof date !== 'string') throw new BadRequest('query "date" must be a string with format YYYY-MM-DD')
+    if (typeof symbol !== 'string') {
+        throw new BadRequest('query "symbol" must be a string');
+    }
+    if (typeof date !== 'string') {
+        throw new BadRequest('query "date" must be a string with format YYYY-MM-DD')
+    }
 
     validateDate(date);
 
