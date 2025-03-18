@@ -1,11 +1,15 @@
+import { SymbolData, Prices } from "../interfaces/Prices.interface";
 import PricesRepository from "../interfaces/PricesRepository.interfaces";
+import data from './stockPrices.json';
+
+const prices = data as Prices;
+
 
 export class PricesJsonRepo implements PricesRepository {
-    getSymbol(symbol: string): string | null {
-        throw new Error("Method not implemented.");
+    getSymbol(symbol: string): SymbolData | null {
+        return prices[symbol]
     }
     getClosingPrice(symbol: string, date: string): string | null {
-        throw new Error("Method not implemented.");
+        return prices[symbol][date];
     }
-    
 }
