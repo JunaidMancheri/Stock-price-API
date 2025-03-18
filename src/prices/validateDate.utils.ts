@@ -3,7 +3,6 @@ import { BadRequest } from "http-errors";
 export function validateDate(date: string) {
     const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
     const isValidFormat = dateRegex.test(date);
-    console.log(isValidFormat)
     if (!isValidFormat) {
         throw new BadRequest('query "date" must be a string with format YYYY-MM-DD');
     }
