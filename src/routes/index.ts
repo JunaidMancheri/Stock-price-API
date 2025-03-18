@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { pricesRouter } from "./prices";
+import { pricesRouter } from "./prices.routes";
 
 const router = Router();
 
