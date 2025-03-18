@@ -5,7 +5,7 @@ describe('API Tests', () => {
     it('Should return closing price of the AAPL at 2024-04-01', async () => {
         const res = await request(app).get('/api/stock-price?symbol=AAPL&date=2024-04-01');
         expect(res.status).toBe(200);
-        expect(res.body).toEqual({ closingPrice: expect.any(String) });
+        expect(res.body).toEqual({ symbol: 'AAPL',closingPrice: expect.any(String) });
     });
 
     it('Should return symbol not found', async () => {
